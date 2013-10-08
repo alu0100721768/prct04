@@ -1,0 +1,51 @@
+ git merge mult
+Auto-merging matrices/matrices.rb~
+CONFLICT (content): Merge conflict in matrices/matrices.rb~
+Auto-merging matrices/matrices.rb
+CONFLICT (content): Merge conflict in matrices/matrices.rb
+Automatic merge failed; fix conflicts and then commit the result.
+
+En algunas ocasiones, los procesos de fusión no sueles ser fluidos. Si hay modificaciones dispares,
+en una misma porción de un mismo archivo en las dos ramas distintas que pretendes fusionar, Git no será capaz de fusionarlas directamente. En este caso, sucede que tanto en la rama mult como suma modifican un mismo archivo y una misma porción.
+
+leandro@leandro-VirtualBox:~/LPP/prct04/matrices$ git status
+# On branch master
+# Unmerged paths:
+#   (use "git add/rm <file>..." as appropriate to mark resolution)
+#
+#	both modified:      matrices.rb
+#	both modified:      matrices.rb~
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lo solucionamos haciendo un git add y un git commit, como nos dice la ayuda
+
+leandro@leandro-VirtualBox:~/LPP/prct04/matrices$ git add .
+leandro@leandro-VirtualBox:~/LPP/prct04/matrices$ git commit -a -m "Funcion multiplicar y suma terminadas"
+
+Luego comprobamos con el git status
+
+leandro@leandro-VirtualBox:~/LPP/prct04/matrices$ git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 2 commits.
+#
+nothing to commit (working directory clean)
+
+Y como vemos todo bien, fusionamos
+
+leandro@leandro-VirtualBox:~/LPP/prct04/matrices$ git merge mult
+Already up-to-date.
+
+Para acabar eliminamos la rama mult y subimos a github
+
+leandro@leandro-VirtualBox:~/LPP/prct04/matrices$ git branch -d mult
+Deleted branch mult (was 68e5c7b).
+
+leandro@leandro-VirtualBox:~/LPP/prct04/matrices$ git push --all origin
+Counting objects: 13, done.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 664 bytes, done.
+Total 5 (delta 2), reused 0 (delta 0)
+To git@github.com:alu0100724165/prct04.git
+   b48c5f6..12cc740  master -> master
+
