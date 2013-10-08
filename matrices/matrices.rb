@@ -76,5 +76,43 @@ multi=Array.new(tam){Array.new(tam)}
 return multi
 end
 
+puts "Suma y multiplicación de matrices cuadradas"
+puts "--------------------------------------------"
+
+print "Cual es el tamaño de las matrices"
+STDOUT.flush
+t=gets.chomp
+
+a=Array.new(t.to_i){Array.new(t.to_i)}
+b=Array.new(t.to_i){Array.new(t.to_i)}
+
+print "Cargar Matriz A\n"
+cargar_Matriz(a)
+
+print "\nCargar Matriz B\n"
+cargar_Matriz(b)
+puts "\n"
+
+print "Las matrices A y B son las siguientes\n"
+
+mostrar_Matriz(a) 
+
+puts "\n"
+
+mostrar_Matriz(b)
+
+puts "\n"
+
+print "Multiplicacion\n"
+
+c=multiplicar_Matriz(a, b, t.to_i)
+mostrar_Matriz(c)
+
+puts "\n"
+
+print "Suma\n"
+s=suma_Matriz(a, b, t.to_i)
+mostrar_Matriz(s)
+
 
 

@@ -56,7 +56,8 @@ suma=Array.new(tam){Array.new(tam)}
 	end
 return suma
 end
-=======
+
+=begin
 Este es el método para Multiplicar
 =end
 
@@ -76,4 +77,4 @@ return multi
 end
 
 
->>>>>>> mult
+
