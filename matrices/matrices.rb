@@ -40,3 +40,18 @@ def cargar_Matriz(matriz)
 	end
 
 end
+
+=begin
+Este es el método para Sumar
+=end
+
+def suma_Matriz(matrizA, matrizB,tam)
+
+suma=Array.new(tam){Array.new(tam)}
+	for i in (0..matrizA.length-1)	
+		for j in (0..matrizB.length-1)
+			suma[i][j]=(suma[i][j].to_i + (matrizA[i][j].to_i + matrizB[i][j].to_i))	
+		end
+	end
+return suma
+end
